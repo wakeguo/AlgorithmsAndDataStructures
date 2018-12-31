@@ -7,25 +7,31 @@
 """
 
 
-def selectionsorts(array):
+def Selectionsort(array):
     m = len(array)      # 循环 m - 1 次
     for i in range(0, m - 1):
         # min_index = i  # 假设的最小元素下标
 
         # 从 i + 1 位置循环到末尾找到最小值
         for j in range(i + 1, m):
-            if array[j] < array[i]:
+            if array[j] < array[i]:  # 每次都是选取第一个为基准不动，后面的与其进行比较，选取一个最小的赋值给第一个
                 # min_index = j
                 array[i], array[j] = array[j], array[i]
     return array
 
 
-if __name__ == '__main__':
-    array = [4, 3, 1, 6, 5]
-    print(selectionsorts(array))
+# 实质就是和冒泡排序一样，只是这是反着用的选择最小值，放在最左侧
+def Selectionsorts(array):
+    m = len(array)
+    for i in range(0, m - 1):
+        for j in range(i, m - 1):
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
+    return array
 
 
-def Selectionsort(array):
+
+def Selectionsortss(array):
     m = len(array)
     for j in range(0, m - 1):
         min_index = j

@@ -9,10 +9,11 @@
 """
 
 
+# 实质和冒泡排序差不多
 def Insertsort(array):
     m = len(array)
     for i in range(1, m):  # 从第二个数开始比较
-        for j in range(i, 0, -1):
+        for j in range(i, 0, -1):  # j是倒着进行比较
             if array[j] < array[j - 1]:
                 array[j], array[j - 1] = array[j - 1], array[j]
     return array
