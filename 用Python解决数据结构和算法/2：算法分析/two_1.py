@@ -2,11 +2,11 @@ import time
 
 
 def sum_1(n):  # 时间复杂度为O(n)
-    start = time.perf_counter()
+    start = time.perf_counter()  # time.time()
     the_sum = 0
     for i in range(n + 1):
         the_sum += i
-    end = time.perf_counter()
+    end = time.perf_counter()  # time.time()
     m = end - start
     return the_sum, m
 

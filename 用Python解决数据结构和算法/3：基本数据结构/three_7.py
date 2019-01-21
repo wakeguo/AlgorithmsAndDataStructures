@@ -2,6 +2,8 @@
 列表介绍1：实现无序列表：链表
 """
 
+
+# 定义节点
 class Node():
     def __init__(self, initdata):
         self.data = initdata
@@ -55,11 +57,31 @@ class UnorderedList():
                 current = current.getNext()
         return found
 
+    def remove(self, item):
+        current = self.head
+        previous = None
+        found = False
+        while not found:
+            if current.getData() == item:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+        if previous == None:
+            self.head = current.getNext()
+        else:
+            previous.setNext(current.getNext())
+
+
 
 mylist = UnorderedList()
 mylist.add(31)
 mylist.add(77)
 mylist.add(17)
 mylist.add(93)
+mylist.add(26)
+mylist.add(54)
 print(mylist.size())
-print(mylist.search(31))
+print(mylist.search(17))
+mylist.remove(77)
+print(mylist.size())

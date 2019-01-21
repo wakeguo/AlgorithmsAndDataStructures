@@ -25,7 +25,7 @@ def anagram_solution1(s1, s2):  # 时间复杂度是O(n**2)
     return still_ok, a_list
 
 
-def anagram_solution2(s1, s2):  # 时间复杂度O(n) + 2 * O(n*logn)
+def anagram_solution2(s1, s2):  # 时间复杂度O(n) + 2 * O(n*logn) = O(n*logn)
     a_list1 = list(s1)
     a_list2 = list(s2)
 
@@ -67,4 +67,6 @@ def anagram_solution3(s1, s2):  # 时间复杂度是O(n)
 
 a = 'abcd'
 b = 'dcba'
-print(anagram_solution3(a, b))
+m, n = anagram_solution1(a, b)
+print(m, n)
+# print(anagram_solution1(a, b))

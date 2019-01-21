@@ -3,6 +3,7 @@
 """
 
 from timeit import Timer
+import random
 
 
 def test1():
@@ -56,3 +57,31 @@ print(b)
 
 # 1.852117116741474
 # 0.00013342835827234723
+
+
+for i in range(10000, 100001, 20000):
+    t = Timer('random.randrange(%d) in x' % i, 'from __main__ import random, x')
+    x = list(range(i))
+    lst_time = t.timeit(number=1000)
+    x = {j: None for j in range(i)}
+    d_time = t.timeit(number=1000)
+    print('%d, %10.3f, %10.3f' % (i, lst_time, d_time))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
